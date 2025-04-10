@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 0.75vh">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="images/logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/prism.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/unescaped-markup/prism-unescaped-markup.min.js"></script>
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://xt8ss.github.io/ff-site-data/styles.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism-tomorrow.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/unescaped-markup/prism-unescaped-markup.min.css"
+        />
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin=""
+        />
+        <title>JS — WebLearn</title>
+    </head>
+    <body class="flex fd-col">
+        <div class="titleBar flex fjc-center fai-center cg-1">
+            <img src="images/logo.png" alt="" />
+            <b> WebLearn </b>
+        </div>
+
+        <nav class="interNav">
+            <ul class="flex">
+                <li>
+                    <a
+                        href="learn-html.html"
+                        class="flex fai-center fjc-center fw"
+                    >
+                        <iconify-icon
+                            icon="vscode-icons:file-type-html"
+                        ></iconify-icon>
+                        <b> HTML </b>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="learn-css.html"
+                        class="flex fai-center fjc-center fw"
+                    >
+                        <iconify-icon
+                            icon="vscode-icons:file-type-css2"
+                        ></iconify-icon>
+                        <b> CSS </b>
+                    </a>
+                </li>
+                <li class="currentPage">
+                    <a
+                        href="learn-js.html"
+                        class="flex fai-center fjc-center fw"
+                    >
+                        <iconify-icon
+                            icon="vscode-icons:file-type-js-official"
+                        ></iconify-icon>
+                        <b> JS </b>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="contentWrapper flex">
+            <nav class="intraNav flex fd-col fai-center pos-rel">
+                <b class="title divider ta-center">Contenido</b>
+                <ul class="flex fd-col"></ul>
+            </nav>
+
+            <div class="fadeWrapper">
+                <main class="flex fd-col">
+                    <section id="what">
+                        <h1 class="divider">¿Qué es?</h1>
+                        <p>
+                            JavaScript es un <b>lenguaje de programación</b> que
+                            le da la mayoría de la interactividad y contenido
+                            dinámico a una página web. Esto desbloquea el 90% de
+                            todas las posibilidades que se pueden llevar a cabo
+                            en una página web, desde botones, juegos,
+                            aplicaciones, modelos, etc.
+                        </p>
+                        <p>
+                            Para incluir JavaScript en una página web, se puede
+                            realizar de dos maneras. Las dos consisten en crear
+                            un elemento
+                            <code class="lang-HTML">&lt;script&gt;</code> dentro
+                            del elemento básico de
+                            <code class="lang-HTML">&lt;head&gt;</code> o
+                            <code class="lang-HTML">&lt;body&gt;</code>,
+                            preferentemente dentro del segundo y como último
+                            elemento. La primera manera permite empezar a
+                            escribir código JavaScript dentro del elemento
+                            <code class="lang-HTML">&lt;script&gt;</code> de la
+                            siguiente forma:
+                        </p>
+                        <script type="text/plain" class="lang-HTML lessOffset">
+                            <body>
+                                <script>
+                                    alert("¡JavaScript es mi lenguaje favorito!");
+                                </­script>
+                            </body­>
+                        </script>
+                        <p>
+                            La segunda manera, y la más comúnmente usada,
+                            consiste en crear un archivo por separado con la
+                            extensión <b>.js</b> dentro del directorio del
+                            archivo HTML, escribiendo el código JavaScript
+                            estrictamente dentro de ese archivo. Se puede
+                            implementar en el HTML al crear un elemento de la
+                            siguiente forma:
+                        </p>
+                        <script type="text/plain" class="lang-HTML lessOffset">
+                            <body>
+                                <script src="main.js"></­script>
+                            </body­>
+                        </script>
+                        <p>
+                            El atributo de
+                            <code class="lang-HTML">src</code> especifica la
+                            dirección del archivo local, o incluso URL externo,
+                            del archivo de JavaScript.
+                        </p>
+                    </section>
+                    <section id="variables">
+                        <h1 class="divider">Variables</h1>
+                        <p>
+                            Las variables almacenan todo tipo de
+                            <b>información</b>
+                            asignadas a ellas. Por ejemplo, hay varias formas de
+                            declarar una variable:
+                        </p>
+                        <script type="text/plain" class="lang-JS">
+                            let miVariable;
+                            miVariable = "Texto";
+                        </script>
+                        <script type="text/plain" class="lang-JS lessOffset">
+                            let miVariable = "Texto";
+                        </script>
+                        <p>
+                            La palabra clave <code class="lang-JS">let</code> es
+                            lo que define la variable con nombre de
+                            <code class="lang-JS">miVariable</code>, el cual es
+                            sensible a minúsculas y mayúsculas. Tambíen se puede
+                            usar la palabra clave
+                            <code class="lang-JS">var</code> en lugar de
+                            <code class="lang-JS">let</code>, pero no es
+                            recomendado. Similarmente,
+                            <code class="lang-JS">let</code> se puede sustituir
+                            por <code class="lang-JS">const</code>, para
+                            especificar que el valor de esa variable
+                            <b>no podrá ser cambiado</b> después de su
+                            declaración.
+                        </p>
+                        <p>
+                            Es importante notar que toda declaración como esta
+                            deberá de llevar un <b>punto y coma</b> (<code
+                                class="lang-JS"
+                                >;</code
+                            >) donde termina. Esto es para delimitar el rango de
+                            cada declaración y que diferentes delcaraciones no
+                            conflictúen entre sí.
+                        </p>
+                        <p>
+                            Para poder leer el valor de una variable,
+                            generalmente se usa el comando de
+                            <code class="lang-JS">console.log()</code>, lo que
+                            registra cualquier variable, valor o expresión
+                            dentro de los paréntesis
+                            <code class="lang-JS">()</code> a la consola del
+                            navegador.
+                        </p>
+                    </section>
+                    <section id="types">
+                        <h1 class="divider">Tipos</h1>
+                        <p>
+                            Cada variable que almacena información se puede
+                            clasificar en un tipo, el cual define qué
+                            <b>tipo de datos</b> son los almacenados y cómo se
+                            puede interactuar con ellos. Estos son algunos de
+                            los tipos más comunes:
+                        </p>
+                        <ul>
+                            <li>
+                                <code class="lang-JS">String</code>: Secuencia
+                                de texto, escrita entre comillas (<code
+                                    class="lang-JS"
+                                    >""</code
+                                >, <code class="lang-JS">''</code> o
+                                <code class="lang-JS">``</code>).
+                            </li>
+                            <li>
+                                <code class="lang-JS">Number</code>: Cualquier
+                                número, sin comillas.
+                            </li>
+                            <li>
+                                <code class="lang-JS">Boolean</code>: Valor
+                                verdadero o falso, escrito como
+                                <code class="lang-JS">true</code> o
+                                <code class="lang-JS">false</code>.
+                            </li>
+                            <li>
+                                <code class="lang-JS">Array</code>: Uno o más
+                                valores de cualquier tipo ordenados en una
+                                lista. (<code class="lang-JS"
+                                    >["Texto", 5, false] </code
+                                >)
+                            </li>
+                            <li>
+                                <code class="lang-JS">Object</code>: Casi
+                                cualquier cosa, ya que JavaScript maneja todo
+                                tipo de datos como objetos. Contienen parejas de
+                                propiedades y sus valores. (<code
+                                    class="lang-JS"
+                                    >{"prop1": "Texto", "prop2": true}</code
+                                >)
+                            </li>
+                        </ul>
+                    </section>
+                    <section id="operators">
+                        <h1 class="divider">Operadores</h1>
+                        <p>
+                            Un operador funciona como una
+                            <b>operación matemática</b>, o en algunos casos, de
+                            <b>comparación</b>, la cual siempre devuelve el
+                            valor resultante de la operación. Los operadores
+                            básicos son:
+                        </p>
+                        <ul>
+                            <li>
+                                <code class="lang-JS">+</code>: Suma o
+                                concatenación - Suma dos números o une dos
+                                cadenas de texto.
+                            </li>
+                            <li><code class="lang-JS">-</code>: Resta</li>
+                            <li>
+                                <code class="lang-JS">*</code>: Multiplicación
+                            </li>
+                            <li><code class="lang-JS">/</code>: División</li>
+                            <li>
+                                <code class="lang-JS">=</code>: Asignación -
+                                Asigna un valo a una variable.
+                            </li>
+                            <li>
+                                <code class="lang-JS">===</code>: Igualdad -
+                                Comprueba si dos valores son iguales,
+                                devolviendo un
+                                <code class="lang-JS">Boolean</code>.
+                            </li>
+                            <li>
+                                <code class="lang-JS">!</code>: Negación -
+                                Cambia un valor equivalente a
+                                <code class="lang-JS">true</code> a
+                                <code class="lang-JS">false</code>, y viceversa.
+                            </li>
+                            <li>
+                                <code class="lang-JS">!==</code>: Diferencia -
+                                Comprueba si dos valores no son iguales,
+                                devolviendo un
+                                <code class="lang-JS">Boolean</code>.
+                            </li>
+                        </ul>
+                    </section>
+                    <section id="conditionals">
+                        <h1 class="divider">Condicionales</h1>
+                        <p>
+                            Los condicionales son enunciados los cuales permiten
+                            <b>comprobar</b> si es que una expresión es
+                            verdadera (<code class="lang-JS">true</code>) o
+                            falsa (<code class="lang-JS">false</code>), para
+                            después ejecutar un bloque de código dependiendo del
+                            resultado. Por ejemplo:
+                        </p>
+                        <script type="text/plain" class="lang-JS">
+                            let tareas = 5;
+                            if(tareas === 5){
+                                alert("¡Tienes todas las tareas!");
+                            } else {
+                                alert("¡No tienes todas las tareas!");
+                            }
+                        </script>
+                        <p>
+                            Este código se puede dividir en las siguientes
+                            partes:
+                        </p>
+                        <ul>
+                            <li>
+                                <code class="lang-JS">let tareas = 5;</code>:
+                                Declaración de la variable
+                            </li>
+                            <li>
+                                <code class="lang-JS">if(...)</code>: Expresión
+                                "si..."
+                            </li>
+                            <li>
+                                <code class="lang-JS">tareas === 5</code>:
+                                Comparación de variable con valor
+                            </li>
+                            <li>
+                                <code class="lang-JS"
+                                    >{ alert("¡Tienes...") }</code
+                                >: Código a ejecutar si la expresión
+                                <code class="lang-JS">if(...)</code> devuelve
+                                <code class="lang-JS">true</code>.
+                            </li>
+                            <li>
+                                <code class="lang-JS">else</code>: Expresión "si
+                                no"
+                            </li>
+                            <li>
+                                <code class="lang-JS"
+                                    >{ alert("¡No tienes...") }</code
+                                >: Código a ejecutar si la expresión
+                                <code class="lang-JS">if(...)</code> devuelve
+                                <code class="lang-JS">false</code>.
+                            </li>
+                        </ul>
+                        <p>
+                            Al ejecutar el código, se recibirá una alerta con el
+                            texto "¡Tienes todas las tareas!" en la página web,
+                            ya que la expresión de
+                            <code class="lang-JS">if(tareas === 5)</code>
+                            devolverá el valor de
+                            <code class="lang-JS">true</code>, al tener una
+                            expresión equivalente dentro.
+                        </p>
+                    </section>
+                    <section id="functions">
+                        <h1 class="divider">Funciones</h1>
+                        <p>
+                            Las funciones, en JavaScript, son
+                            <b>bloques de código</b>
+                            aislados, los cuales no se ejecutan por sí mismos.
+                            Se les tiene que asignar un nombre, para después
+                            poder ser llamados por el mismo y ejecutar el código
+                            dentro.
+                        </p>
+                        <p>
+                            JavaScript está compuesto por funciones nativas,
+                            integradas en el lenguaje, como es
+                            <code class="lang-JS">alert()</code>, pero también
+                            se pueden definir funciones con código propio. Por
+                            ejemplo:
+                        </p>
+                        <script type="text/plain" class="lang-JS">
+                            function dividir(dividendo, divisor) {
+                                let resultado = dividendo / divisor;
+                                return resultado;
+                            }
+                        </script>
+                        <p>
+                            La función anterior se definió con el nombre de
+                            <code class="lang-JS">dividir</code>, junto con 2
+                            argumentos o parámetros:
+                            <code class="lang-JS">dividendo</code> y
+                            <code class="lang-JS">divisor</code>. Estos
+                            argumentos pueden ser reemplazados por valores
+                            propios cuando se llama a la función.
+                        </p>
+                        <p>
+                            Actualmente, con el código anterior, ninguna acción
+                            se ejecuta; solo se define la función. El código y
+                            sus variables dentro de la función están aislados,
+                            así que no pueden ser directamente utilizados fuera
+                            de ella. Para poder usar el código dentro de la
+                            función, se tiene que llamar de la siguiente manera:
+                        </p>
+                        <script type="text/plain" class="lang-JS">
+                            dividir(15, 5);
+                            dividir(100, 100);
+                            dividir(42, 0.5);
+                        </script>
+                        <p>
+                            Lo anterior, si es ejecutado en o registrado a la
+                            consola, devolverá los siguientes tres valores:
+                            <code class="lang-JS">3</code>,
+                            <code class="lang-JS">1</code>,
+                            <code class="lang-JS">84</code>. Esto es porque cada
+                            vez que se llamó la función
+                            <code class="lang-JS">dividir()</code>, se
+                            proporcionaron los dos argumentos de
+                            <code class="lang-JS">dividendo</code> y
+                            <code class="lang-JS">divisor</code>, y fueron
+                            reemplazados en el código original de la función
+                            para calcular el resultado.
+                        </p>
+                        <p>
+                            Al llamar una función, es crucial incluir los
+                            paréntesis <code class="lang-JS">()</code> después
+                            de su nombre, aunque no reciba ningún argumento. De
+                            similar importancia es la palabra clave de
+                            <code class="lang-JS">return</code>, lo que
+                            <b>devuelve cualquier valor</b> especificado después
+                            de esta; permite usar los valores de variables o
+                            expresiones de una función fuera de esta. Si es que
+                            no se desea devolver ningún valor, este paso se
+                            puede omitir.
+                        </p>
+                    </section>
+                    <section id="events">
+                        <h1 class="divider">Eventos</h1>
+                        <p>
+                            Finalmente, para poder crear la interactividad
+                            deseada en una página web, el código JavaScript
+                            tiene que ser enlazado a un evento, el cual capta lo
+                            que <b>sucede en el navegador</b>. Esto incluye
+                            desde un click, hasta la presión de una tecla o
+                            selección o copiado de un texto. Por ejemplo, el
+                            siguiente evento
+                            <code class="lang-JS">click</code> se puede escribir
+                            de dos maneras:
+                        </p>
+                        <script type="text/plain" class="lang-JS">
+                            document.querySelector("button").addEventListener("click", function(){
+                                alert("¡Click!");
+                            });
+                        </script>
+                        <script type="text/plain" class="lang-JS">
+                            document.querySelector("button").onclick = function() {
+                                alert("¡Click!");
+                            };
+                        </script>
+                        <p>
+                            Ambas formas primero seleccionan el primer elemento
+                            <code class="lang-HTML">&lt;button&gt;</code> en el
+                            documento, ya que
+                            <code class="lang-JS">"button"</code> es un
+                            <b>selector CSS</b>.
+                        </p>
+                        <p>
+                            Después, se define qué tipo de evento es al que se
+                            busca reaccionar ante, en este caso,
+                            <code class="lang-JS">"click"</code>. Puede ser
+                            definido como el primer argumento de
+                            <code class="lang-JS">.addEventListener()</code>, o
+                            como el método de
+                            <code class="lang-JS">.onclick</code> en el
+                            elemento.
+                        </p>
+                        <p>
+                            Por último, se tiene que definir una nueva
+                            <b>función anónima</b> que se ejecute cuando el
+                            evento es realizado, es decir, una función sin
+                            nombre y específica a solamente ese evento. En el
+                            caso anterior,
+                            <code class="lang-JS">alert("¡Click!")</code> es
+                            ejecutado, y así se ha añadido una pieza de
+                            interactividad a la página web, de muchas por venir.
+                        </p>
+                    </section>
+                </main>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>

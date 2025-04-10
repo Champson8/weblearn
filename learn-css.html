@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 0.75vh">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="images/logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/prism.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/unescaped-markup/prism-unescaped-markup.min.js"></script>
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://xt8ss.github.io/ff-site-data/styles.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism-tomorrow.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/unescaped-markup/prism-unescaped-markup.min.css"
+        />
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin=""
+        />
+        <title>CSS — WebLearn</title>
+    </head>
+    <body class="flex fd-col">
+        <div class="titleBar flex fjc-center fai-center cg-1">
+            <img src="images/logo.png" alt="" />
+            <b> WebLearn </b>
+        </div>
+
+        <nav class="interNav">
+            <ul class="flex">
+                <li>
+                    <a
+                        href="learn-html.html"
+                        class="flex fai-center fjc-center fw"
+                    >
+                        <iconify-icon
+                            icon="vscode-icons:file-type-html"
+                        ></iconify-icon>
+                        <b> HTML </b>
+                    </a>
+                </li>
+                <li class="currentPage">
+                    <a
+                        href="learn-css.html"
+                        class="flex fai-center fjc-center fw"
+                    >
+                        <iconify-icon
+                            icon="vscode-icons:file-type-css2"
+                        ></iconify-icon>
+                        <b> CSS </b>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="learn-js.html"
+                        class="flex fai-center fjc-center fw"
+                    >
+                        <iconify-icon
+                            icon="vscode-icons:file-type-js-official"
+                        ></iconify-icon>
+                        <b> JS </b>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="contentWrapper flex">
+            <nav class="intraNav flex fd-col fai-center pos-rel">
+                <b class="title divider ta-center">Contenido</b>
+                <ul class="flex fd-col"></ul>
+            </nav>
+
+            <div class="fadeWrapper">
+                <main class="flex fd-col">
+                    <section id="what">
+                        <h1 class="divider">¿Qué es?</h1>
+                        <p>
+                            CSS, u <b>Hojas de Estilo en Cascada</b>, sirve para
+                            darle estilo y personalizar el HTML de una página.
+                            Como el HTML, no es un lenguaje de programación,
+                            sino un <b>lenguaje de hojas de estilo</b> que
+                            define reglas para definir la apariencia de una
+                            página web.
+                        </p>
+                        <p>
+                            Para incluir CSS en una página web, se puede
+                            realizar de dos maneras. La primera consiste en
+                            crear un elemento
+                            <code class="lang-HTML">&lt;style&gt;</code> dentro
+                            del elemento básico de
+                            <code class="lang-HTML">&lt;head&gt;</code>. Dentro
+                            del primero, se puede comenzar a escribir código CSS
+                            de la siguiente forma:
+                        </p>
+                        <script type="text/plain" class="lang-HTML lessOffset">
+                            <head>
+                                <style>
+                                    p {
+                                        color: gray;
+                                    }
+                                </style>
+                            </head>
+                        </script>
+                        <p>
+                            La segunda manera, y la más comúnmente usada,
+                            consiste en crear un archivo por separado con la
+                            extensión <b>.css</b> dentro del directorio del
+                            archivo HTML, escribiendo el código CSS
+                            estrictamente dentro de ese archivo. Se puede
+                            implementar en el HTML al crear un elemento
+                            <code class="lang-HTML">&lt;link&gt;</code> dentro
+                            del elemento básico de
+                            <code class="lang-HTML">&lt;head&gt;</code>, de la
+                            siguiente forma:
+                        </p>
+                        <script type="text/plain" class="lang-HTML lessOffset">
+                            <head>
+                                <link rel="stylesheet" href="styles.css" type="text/css">
+                            </head>
+                        </script>
+                        <p>
+                            El atributo de
+                            <code class="lang-HTML">href</code> especifica la
+                            dirección del archivo local, o incluso URL externo,
+                            del archivo de CSS.
+                        </p>
+                    </section>
+                    <section id="anatomy">
+                        <h1 class="divider">Anatomía</h1>
+                        <p>
+                            CSS funciona con reglas, las cuales determinan
+                            <b>qué</b> elementos son lo que se afectan y
+                            <b>cómo</b> es que se afectan.
+                        </p>
+                        <section>
+                            <h2>Regla</h2>
+                            <p>
+                                Como ejemplo, la siguiente regla, mostrada en la
+                                sección anterior:
+                            </p>
+                            <script type="text/plain" class="lang-CSS">
+                                p {
+                                    color: gray;
+                                }
+                            </script>
+                            <p>
+                                La regla se puede dividir en las siguientes
+                                partes:
+                            </p>
+                            <ul>
+                                <li>
+                                    <code class="lang-CSS">p</code>: Selector -
+                                    Es lo que define cuales elementos son
+                                    afectados.
+                                </li>
+                                <li>
+                                    <code class="lang-CSS">
+                                        { color: gray; }
+                                    </code>
+                                    : Declaración - Especifica las propiedades,
+                                    entre <code class="lang-CSS">{}</code>, de
+                                    los elementos seleccionados que son
+                                    afectadas.
+                                    <ul>
+                                        <li>
+                                            <code class="lang-CSS">color</code>:
+                                            Nombre de la propiedad
+                                        </li>
+                                        <li>
+                                            <code class="lang-CSS">gray</code>:
+                                            Valor de la propiedad
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </section>
+                        <section>
+                            <h2>Documento</h2>
+                            <p>
+                                Un documento CSS simplemente es una colección de
+                                reglas, que generalmente están organizadas de
+                                <b>menor a mayor prioridad</b>. La prioridad de
+                                las propiedades afectadas de un elemento, si es
+                                que se repiten en un documento CSS, dependen del
+                                selector definido, pero también de su posición
+                                en el documento.
+                            </p>
+                            <p>
+                                Propiedades cuyas reglas se acercan al final del
+                                documento pueden invalidar propiedades en reglas
+                                anteriores, si es que afectan a los mismos
+                                elementos. Por ejemplo:
+                            </p>
+                            <script type="text/plain" class="lang-CSS">
+                                p {
+                                    color: gray;
+                                    border-style: solid;
+                                    border-width: 1px;
+                                    border-color: black;
+                                }
+
+                                p {
+                                    color: red;
+                                    border-width: 5px;
+                                }
+                            </script>
+                            <p>
+                                Con esto definido, cualquier párrafo en el HTML
+                                tendrá texto de color rojo y con un borde negro
+                                de grosor de 5px, ya que se definieron las
+                                propiedades en la primera regla, pero
+                                <code class="lang-CSS">color</code> y
+                                <code class="lang-CSS">border-width</code>
+                                fueron anulados por la segunda regla.
+                            </p>
+                        </section>
+                    </section>
+                    <section id="selectors">
+                        <h1 class="divider">Selectores</h1>
+                        <p>
+                            Los selectores son bastante flexibles, y no solo son
+                            capaces de seleccionar elementos independientes,
+                            sino también diferentes elementos, dependiendo de
+                            sus
+                            <b
+                                >tipo, elementos cercanos, contextos, atributos
+                                y estados</b
+                            >. Algunos ejemplos:
+                        </p>
+                        <ul>
+                            <li>
+                                <code class="lang-HTML">p</code>: Selecciona
+                                cualquier elemento
+                                <code class="lang-HTML">&lt;p&gt;</code>.
+                            </li>
+                            <li>
+                                <code class="lang-HTML">p, a</code>: Selecciona
+                                cualquier elemento
+                                <code class="lang-HTML">&lt;p&gt;</code> o
+                                <code class="lang-HTML">&lt;a&gt;</code>.
+                            </li>
+                            <li>
+                                <code class="lang-HTML">.my-class</code>:
+                                Selecciona cualquier elemento que incluya la
+                                clase
+                                <code class="lang-HTML">my-class</code> (<code
+                                    class="lang-HTML"
+                                    >class="my-class"</code
+                                >).
+                            </li>
+                            <li>
+                                <code class="lang-HTML">#my-id</code>:
+                                Selecciona cualquier elemento que tenga el id
+                                <code class="lang-HTML">my-id</code> (<code
+                                    class="lang-HTML"
+                                    >id="my-id"</code
+                                >).
+                            </li>
+                            <li>
+                                <code class="lang-HTML">*</code>: Selecciona
+                                todos los elementos.
+                            </li>
+                            <li>
+                                <code class="lang-HTML">img[src]</code>:
+                                Selecciona cualquier elemento
+                                <code class="lang-HTML">&lt;img&gt;</code> con
+                                atributo de <code class="lang-HTML">src</code>
+                            </li>
+                            <li>
+                                <code class="lang-HTML">nav a</code>: Selecciona
+                                cualquier elemento
+                                <code class="lang-HTML">&lt;a&gt;</code>
+                                dondequiera dentro de un elemento
+                                <code class="lang-HTML">&lt;nav&gt;</code>.
+                            </li>
+                            <li>
+                                <code class="lang-HTML">article > p</code>:
+                                Selecciona cualquier elemento
+                                <code class="lang-HTML">&lt;p&gt;</code>
+                                directamente dentro de un elemento
+                                <code class="lang-HTML">&lt;article&gt;</code>.
+                            </li>
+                            <li>
+                                <code class="lang-HTML">h1 + p</code>:
+                                Selecciona cualquier elemento
+                                <code class="lang-HTML">&lt;p&gt;</code>
+                                directamente después de un elemento
+                                <code class="lang-HTML">&lt;h1&gt;</code>.
+                            </li>
+                            <li>
+                                <code class="lang-HTML">h2 ~ h2</code>:
+                                Selecciona cualquier elemento
+                                <code class="lang-HTML">&lt;h2&gt;</code>
+                                dondequiera después de otro elemento
+                                <code class="lang-HTML">&lt;h2&gt;</code>.
+                            </li>
+                            <li>
+                                <code class="lang-HTML">a:hover</code>:
+                                Selecciona cualquier elemento
+                                <code class="lang-HTML">&lt;a&gt;</code>
+                                mientras un cursor está suspendido sobre él.
+                            </li>
+                        </ul>
+                        <p>
+                            Todos los selectores anteriores, y muchos más no
+                            mencionados pueden ser combinados y ajustados para
+                            aplicar distintos estilos estrictamente a los
+                            elementos deseados.
+                        </p>
+                    </section>
+                    <section id="units">
+                        <h1 class="divider">Unidades</h1>
+                        <p>
+                            Existen muchos tipos de unidades y valores para las
+                            propiedades de CSS, pero el tipo de unidad más usado
+                            es el de <b>longitud</b>. Este es definido para
+                            presentar todo tipo de elementos en el tamaño
+                            deseado, y es un factor crucial para crear una
+                            página web presentable. Las unidades de longitud más
+                            usadas son:
+                        </p>
+                        <ul>
+                            <li>
+                                <code class="lang-CSS">px</code>: Equivale a
+                                1/96 de una pulgada
+                            </li>
+                            <li>
+                                <code class="lang-CSS">em</code>: Relativo al
+                                tamaño de letra del elemento padre
+                            </li>
+                            <li>
+                                <code class="lang-CSS">rem</code>: Relativo al
+                                tamaño de letra del elemento raíz
+                            </li>
+                            <li>
+                                <code class="lang-CSS">vw</code>: Relativo a 1%
+                                del ancho de la ventana
+                            </li>
+                            <li>
+                                <code class="lang-CSS">vh</code>: Relativo a 1%
+                                de la altura de la ventana
+                            </li>
+                            <li>
+                                <code class="lang-CSS">vmin</code>: Relativo a
+                                1% de la dimensión más pequeña de la ventana
+                            </li>
+                            <li>
+                                <code class="lang-CSS">vmax</code>: Relativo a
+                                1% de la dimensión más grande de la ventana
+                            </li>
+                        </ul>
+                        <section>
+                            <h2>Em y Rem</h2>
+                            <p>
+                                Son dos de las unidades de longitud más usadas,
+                                gracias a su uso fácil y flexible, ya que son
+                                <b>unidades relativas</b> que pueden ayudar a
+                                que una página se adapte a diferentes escalas de
+                                manera responsiva.
+                            </p>
+                            <p>
+                                La unidad
+                                <code class="lang-CSS">em</code> cambia su
+                                tamaño de manera relativa al
+                                <b>tamaño de letra del elemento padre</b>. Como
+                                ejemplo se tiene el siguiente código:
+                            </p>
+                            <script type="text/plain" class="lang-CSS">
+                                ul {
+                                    font-size: 20px;
+                                }
+
+                                ul > li {
+                                    font-size: 0.5em;
+                                }
+                            </script>
+                            <p>
+                                Se define el tamaño de letra de cualquier lista
+                                como <code class="lang-CSS">20px</code>, así que
+                                el texto directamente dentro de una lista
+                                adoptará este tamaño. Sin embargo, el texto
+                                dentro de los items de cualquier lista adoptarán
+                                un tamaño diferente, ya que se les asignó un
+                                tamaño de letra de
+                                <code class="lang-CSS">0.5em</code>. Esto toma
+                                el tamaño de letra de
+                                <code class="lang-CSS">20px</code> del padre, la
+                                lista, y lo modifica por
+                                <code class="lang-CSS">0.5</code>, dando
+                                finalmente un tamaño de letra de
+                                <code class="lang-CSS">10px</code> a los items
+                                de una lista.
+                            </p>
+                            <p>
+                                En cambio, las unidades
+                                <code class="lang-CSS">rem</code> toman como
+                                referencia el tamaño de letra del elemento raíz,
+                                es decir, el elemento
+                                <code class="lang-HTML">&lt;html&gt;</code>.
+                                Funcionan de manera idéntica a las unidades
+                                <code class="lang-CSS">em</code>, solo que solo
+                                se ven afectadas si es que el tamaño de letra
+                                del elemento raíz es cambiado.
+                            </p>
+                        </section>
+                        <section>
+                            <h2>Porcentajes</h2>
+                            <p>
+                                Los porcentajes, al igual que
+                                <code class="lang-CSS">em</code> y
+                                <code class="lang-CSS">rem</code>, son unidades
+                                que se establecen en relación con otro valor.
+                                Sin embargo, los porcentajes se basan no solo en
+                                el tamaño de letra, sino en la
+                                <b>misma propiedad</b> a la que fueron
+                                asignados, pero perteneciente al elemento padre.
+                                Como ejemplo se tiene el siguiente código:
+                            </p>
+                            <script type="text/plain" class="lang-CSS">
+                                article {
+                                    width: 500px;
+                                    font-size: 20px;
+                                }
+
+                                article p {
+                                    width: 70%;
+                                }
+
+                                article ul {
+                                    font-size: 120%;
+                                }
+                            </script>
+                            <p>
+                                Se define el ancho y tamaño de letra de
+                                cualquier artículo como
+                                <code class="lang-CSS">500px</code> y
+                                <code class="lang-CSS">20px</code>
+                                respectivamente. Los elementos dentro de un
+                                artículo se adaptarán al ancho y tamaño de letra
+                                especificados.
+                            </p>
+                            <p>
+                                Pero, en la segunda regla, al definir el ancho
+                                de aquellos párrafos dentro de un artículo como
+                                un porcentaje, decimos que este siempre será el
+                                70% del ancho del artículo padre.
+                            </p>
+                            <p>
+                                De manera similar, en la tercera regla, al
+                                definir el tamaño de letra de las listas dentro
+                                de un artículo como un porcentaje, decimos que
+                                estas siempre cambiarán su tamaño de letra
+                                acorde al del artículo padre por un factor de
+                                x1.2.
+                            </p>
+                        </section>
+                    </section>
+                    <a href="learn-js.html" class="nextPage flex fai-center">
+                        JS
+                    </a>
+                </main>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>

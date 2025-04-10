@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 0.75vh">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="images/logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/prism.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/unescaped-markup/prism-unescaped-markup.min.js"></script>
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://xt8ss.github.io/ff-site-data/styles.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/themes/prism-tomorrow.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/prismjs@1.30.0/plugins/unescaped-markup/prism-unescaped-markup.min.css"
+        />
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin=""
+        />
+        <title>HTML — WebLearn</title>
+    </head>
+    <body class="flex fd-col">
+        <div class="titleBar flex fjc-center fai-center cg-1">
+            <img src="images/logo.png" alt="" />
+            <b> WebLearn </b>
+        </div>
+
+        <nav class="interNav">
+            <ul class="flex">
+                <li class="currentPage">
+                    <a
+                        href="learn-html.html"
+                        class="flex fai-center fjc-center fw"
+                    >
+                        <iconify-icon
+                            icon="vscode-icons:file-type-html"
+                        ></iconify-icon>
+                        <b> HTML </b>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="learn-css.html"
+                        class="flex fai-center fjc-center fw"
+                    >
+                        <iconify-icon
+                            icon="vscode-icons:file-type-css2"
+                        ></iconify-icon>
+                        <b> CSS </b>
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="learn-js.html"
+                        class="flex fai-center fjc-center fw"
+                    >
+                        <iconify-icon
+                            icon="vscode-icons:file-type-js-official"
+                        ></iconify-icon>
+                        <b> JS </b>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="contentWrapper flex">
+            <nav class="intraNav flex fd-col fai-center pos-rel">
+                <b class="title divider ta-center">Contenido</b>
+                <ul class="flex fd-col"></ul>
+            </nav>
+
+            <div class="fadeWrapper">
+                <main class="flex fd-col">
+                    <section id="what">
+                        <h1>¿Qué es?</h1>
+                        <p>
+                            El <b>Lenguaje de Marcado de Hipertexto</b> se
+                            utiliza para darle estructura a una página web y sus
+                            contenidos. No es un lenguaje de programación; es un
+                            <b>lenguaje de marcado</b> que consiste en una serie
+                            de elementos organizados de acuerdo a la manera en
+                            la que se desea presentar el contenido.
+                        </p>
+                        <p>
+                            Para comenzar, simplemente se tiene que crear un
+                            archivo HTML, cuya extensión es <b>.html</b> y
+                            dentro del cual irá el código.
+                        </p>
+                    </section>
+                    <section id="anatomy">
+                        <h1>Anatomía</h1>
+                        <p>
+                            HTML funciona con <b>etiquetas</b>, las cuales
+                            pueden contener otras etiquetas que dan el formato y
+                            la jerarquía deseada al documento.
+                        </p>
+                        <section>
+                            <h2>Elemento</h2>
+                            <p>Como ejemplo, la creación de un párrafo:</p>
+                            <script type="text/plain" class="lang-HTML">
+                                <p>Mi clase de chino comienza a las 3:00</p>
+                            </script>
+                            <p>
+                                El elemento se puede dividir en las siguientes 3
+                                partes:
+                            </p>
+                            <ul>
+                                <li>
+                                    <code class="lang-HTML">&lt;p&gt;</code>:
+                                    Etiqueta de apertura - Es el nombre del
+                                    elemento encerrado por
+                                    <code class="lang-HTML">&lt;&gt;</code> e
+                                    indica el inicio del elemento.
+                                </li>
+                                <li>
+                                    <code class="lang-HTML">
+                                        Mi clase de chino comienza a las 3:00 </code
+                                    >: Contenido - Es cualquier otro elemento, o
+                                    en este caso, solo texto.
+                                </li>
+                                <li>
+                                    <code class="lang-HTML">&lt;/p&gt;</code>:
+                                    Etiqueta de cierre - Es igual a la etiqueta
+                                    de apertura, pero incluye la barra de cierre
+                                    <code>/</code> antes del nombre de la
+                                    etiqueta, e indica el final del elemento.
+                                </li>
+                            </ul>
+                            <p>
+                                Los elementos tambíen pueden poseer
+                                <b>atributos</b>, como por ejemplo:
+                            </p>
+                            <script type="text/plain" class="lang-HTML">
+                                <p align="center">Mi clase de chino comienza a las 3:00</p>
+                            </script>
+                            <p>
+                                Los atributos contienen
+                                <b>información adicional</b>
+                                sobre el elemento, la cual podría o no cambiar
+                                su apariencia o funcionamiento, dependiendo del
+                                atributo. Generalmente tienen el mismo formato;
+                                separados del nombre del elemento por espacio, y
+                                con un
+                                <code class="lang-HTML">=</code> separando el
+                                nombre y el valor del atributo, con el último
+                                entre comillas.
+                            </p>
+                        </section>
+                        <section>
+                            <h2>Documento</h2>
+                            <p>
+                                Cualquier página HTML requiere distintos de
+                                estos elementos para funcionar, y comúnmente se
+                                define con la misma estructura, o una similar,
+                                dondequiera que se busque:
+                            </p>
+                            <script type="text/plain" class="lang-HTML">
+                                <!DOCTYPE html>
+                                <html>
+                                    <head>
+                                        <meta charset="UTF-8"/>
+                                        <title>Mi propia página web</title>
+                                    </head>
+                                    <body>
+                                        Mi propio contenido
+                                    </body­>
+                                </html>
+                            </script>
+                            <p>
+                                Dentro del elemento
+                                <code class="lang-HTML">&lt;head&gt;</code>, se
+                                incluye aquel contenido que
+                                <b>no es directamente</b>
+                                visible dentro de la página web, pero que aún
+                                así la puede afectar de varias otras maneras.
+                                Puede incluir especificaciones del título,
+                                ícono, estilos CSS o códigos de Javascript.
+                            </p>
+                            <p>
+                                En cambio, dentro del elemento
+                                <code class="lang-HTML">&lt;body&gt;</code>, se
+                                incluye aquel contenido que sí
+                                <b>se desea mostrar</b> dentro de la página web.
+                                Puede incluir texto u otros elementos como
+                                párrafos (<code class="lang-HTML"
+                                    >&lt;p&gt;</code
+                                >), listas (<code class="lang-HTML"
+                                    >&lt;ul&gt;</code
+                                >), imágenes (<code class="lang-HTML"
+                                    >&lt;img /&gt;</code
+                                >), etc.
+                            </p>
+                        </section>
+                    </section>
+                    <section id="markup">
+                        <h1>Marcado</h1>
+                        <p>
+                            El <b>marcado de texto</b> es importante para
+                            especificar qué significan aquel contenido que sirve
+                            como texto en una página.
+                        </p>
+                        <section>
+                            <h2>Encabezados</h2>
+                            <p>
+                                Sirven para definir encabezados, subencabezados,
+                                títulos, etc. Existen 6 niveles de encabezados,
+                                desde el más grande (<code class="lang-HTML"
+                                    >&lt;h1&gt;</code
+                                >) hasta el más pequeño (<code class="lang-HTML"
+                                    >&lt;h6&gt;</code
+                                >):
+                            </p>
+                            <script type="text/plain" class="lang-HTML">
+                                <h1>Encabezado de nivel 1</h1>
+                                <h2>Encabezado de nivel 2</h2>
+                                <h3>Encabezado de nivel 3</h3>
+                                <h4>Encabezado de nivel 4</h4>
+                                <h5>Encabezado de nivel 5</h5>
+                                <h6>Encabezado de nivel 6</h6>
+                            </script>
+                        </section>
+                        <section>
+                            <h2>Párrafos</h2>
+                            <p>
+                                Sirven para delimitar párrafos de texto regular
+                                en el contenido:
+                            </p>
+                            <script type="text/plain" class="lang-HTML">
+                                <p>
+                                    Lorem, ipsum dolor sit amet consectetur
+                                    adipisicing elit. Vitae, commodi dignissimos
+                                    asperiores aliquam est officiis soluta minima
+                                    laboriosam! Nostrum blanditiis sunt sapiente
+                                    beatae. Illum omnis aut dolorum quaerat quia
+                                    perspiciatis!
+                                </p>
+                            </script>
+                        </section>
+                        <section>
+                            <h2>Listas</h2>
+                            <p>
+                                Sirven para crear listas de items. Existen dos
+                                tipos, ordenadas (<code class="lang-HTML"
+                                    >&lt;ol&gt;</code
+                                >) y desordenadas (<code class="lang-HTML"
+                                    >&lt;ul&gt;</code
+                                >). Además, funcionan en conjunto con otro
+                                elemento para sus items (<code class="lang-HTML"
+                                    >&lt;li&gt;</code
+                                >):
+                            </p>
+                            <script type="text/plain" class="lang-HTML">
+                                <h2>Etapas del ciclo de la vida</h2>
+                                <ol>
+                                    <li>Nacimiento</li>
+                                    <li>Reproducción</li>
+                                    <li>Muerte</li>
+                                </ol>
+                                <h2>Materias reprobadas</h2>
+                                <ul>
+                                    <li>Dibujo</li>
+                                    <li>Temas Selectos de Física</li>
+                                    <li>Ecología y Medio Ambiente</li>
+                                </ul>
+                            </script>
+                        </section>
+                    </section>
+                    <section id="images">
+                        <h1>Imágenes</h1>
+                        <p>
+                            Los elementos de imagen incrustan un <b>gráfico</b>,
+                            lo que puede ser una imagen o vector, en la página,
+                            por ejemplo:
+                        </p>
+                        <script type="text/plain" class="lang-HTML lessOffset">
+                            <img src="imágenes/juanes.png" alt="Mi mascota" />
+                        </script>
+                        <p>
+                            El elemento de imagen tiene dos atributos cruciales
+                            para su funcionamiento:
+                        </p>
+                        <ul>
+                            <li>
+                                <code class="lang-HTML">src</code>: Especifica
+                                la ruta o ubicación del archivo que se desea
+                                mostrar, como un URL externo o archivo local.
+                            </li>
+                            <li>
+                                <code class="lang-HTML">alt</code>: Es el texto
+                                que se muestra en lugar de la imagen, si es que
+                                esta falló al cargar o está en el proceso.
+                            </li>
+                        </ul>
+                    </section>
+                    <section id="links">
+                        <h1>Vínculos</h1>
+                        <p>
+                            Los vínculos crean <b>enlaces</b> a distintos
+                            lugares de la web, los que podrían ser archivos,
+                            páginas dentro del mismo sitio, u otros sitios web
+                            por completo. Estos requieren contenido dentro de
+                            ellos, ya sea texto o imágenes, ya que necesitan ser
+                            visibles para navegar la web al interactuar con
+                            ellos.
+                        </p>
+                        <script type="text/plain" class="lang-HTML lessOffset">
+                            <a href="https://cobach.sonora.gob.mx/">Colegio de Bachilleres del Estado de Sonora</a>
+                        </script>
+                        <p>
+                            El único atributo obligatorio que un enlace posee es
+                            <code class="lang-HTML">href</code>, el cual
+                            especifica la dirección local o URL externo a la que
+                            se desea llevar cuando se interactúa con el
+                            elemento.
+                        </p>
+                    </section>
+                    <a href="learn-css.html" class="nextPage flex fai-center">
+                        CSS
+                    </a>
+                </main>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>
